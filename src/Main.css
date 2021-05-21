@@ -12,6 +12,9 @@ body {
 
 .produkty {
     margin-top: 20px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 p {
     margin: 20px;
@@ -45,11 +48,7 @@ h3 {
     text-align: center;
     padding: 4px 4px 4px 4px;
 }
-.produkty {
-    max-width: 600px;
-    display:block;
-    margin: auto;
-}
+
 
 .produkty tr:nth-child(even){background-color: navajowhite; color: black;}
 .produkty tr:nth-child(odd){background-color: #fCCF60;color: black;}

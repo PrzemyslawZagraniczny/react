@@ -5,6 +5,8 @@ import Main from './Main'
 import Product from './Product'
 import Category from './Category'
 import Shop from './Shop'
+import Discount from './Discount'
+import DiscountForm from './DiscountForm'
 import CategoryForm from './CategoryForm'
 import ProductForm from './ProductForm'
 
@@ -22,6 +24,8 @@ function App() {
         <li><Link to="/addproduct">Dodaj Produkt</Link>  </li>
         <li><Link to="/cats">Kategorie</Link>  </li>
         <li><Link to="/addcat">Dodaj Kategorię</Link>  </li>
+        <li><Link to="/discounts">Bonifikaty</Link>  </li>
+        <li><Link to="/adddiscount">Nowa Bonifikata</Link>  </li>
       </ul>
       
       <Route path="/main"> <Main/></Route>
@@ -30,6 +34,8 @@ function App() {
       <Route path="/addproduct"><ProductForm/></Route>
       <Route path="/cats"><Category/></Route>
       <Route path="/addcat"><CategoryForm/></Route>
+      <Route path="/discounts"><Discount/></Route>
+      <Route path="/adddiscount"><DiscountForm/></Route>
       </BrowserRouter>
       </div>
       <div className="root"></div>       

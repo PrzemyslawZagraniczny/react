@@ -5,17 +5,22 @@ class ProductForm extends React.Component {
     state = {
         cat : [],
         color: [],
+        discount: [],
     }
     constructor() {
         super();
         this.getCats();
         this.getColors();
+        this.getDiscsounts();
     }
   
     render() {
 
         const cats = this.state.cat.map( c =>
             <option value={c.id+""}>{c.name}</option>
+        )
+        const discounts = this.state.discount.map( d =>
+            <option value={d.id+""}>{d.name}</option>
         )
 
         const colors = this.state.color.map( c =>
@@ -44,8 +49,6 @@ class ProductForm extends React.Component {
                     <input type="text" id="price" name="price" required/>
                 </dev>
             </dl>
-            {/* domyślnie bez promocji. Dodać zniżki można przez aktualizuj */}
-            <input name="discount" id="discount" type="hidden" value="0" required/>
             <label for="color"> Kolor:</label>
             <div>
                 <select name="color" id="color">
@@ -56,6 +59,12 @@ class ProductForm extends React.Component {
             <div>
                 <select name="category" id="category">
                     {cats}
+                </select>
+            </div>
+            <label for="discount"> Bonifikata:</label>
+            <div>
+                <select name="discount" id="discount">
+                    {discounts}
                 </select>
             </div>
             <br></br>
@@ -79,7 +88,6 @@ class ProductForm extends React.Component {
     }
     
     componentDidMount() {
-        
         
     }
 
@@ -131,6 +139,22 @@ class ProductForm extends React.Component {
         );
                      
         this.setState({color: colors});
+    }
+
+    async getDiscsounts() {
+        const url = "http://localhost:9001/discounts_json";
+        let res = await this.getRequest(url);
+        let discounts = [];
+        res.map(d =>
+            discounts.push({ 
+              id: d.id,
+              name: d.name,
+              value: d.value
+            }
+            )
+        );
+                     
+        this.setState({discount: discounts});
     }
 }
 
