@@ -82,7 +82,7 @@ class Product extends React.Component {
                 category: p.category,
                 color: p.color,
                 name: p.name,
-                description: p.descriiption,
+                description: p.description,
                 price: p.price,
                 discount: p.discount
             });

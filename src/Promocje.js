@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-class Shop extends React.Component {
+class Promocje extends React.Component {
     state = {
         product : [],
         cat : [],
         color: [],
         discount: [],
+        bShow: true
     }
     constructor() {
         super();
@@ -23,6 +24,7 @@ class Shop extends React.Component {
     render() {
         const showDiscounts = () => {return this.state.bShow}
         const rows = this.state.product.map( p =>
+            (showDiscounts() &&  this.state.discount[p.discount+"_val"] > 0) ? 
             <tr>
             <td>{p.id}</td>
             <td>{p.name}}</td>
@@ -32,6 +34,7 @@ class Shop extends React.Component {
             {this.state.discount[p.discount+"_val"] > 0 ? <td><p><b>PROMOCJA!</b> {this.state.discount[p.discount]} </p><span class="stara_cena">{(p.price/100).toFixed(0)}PLN</span><span class="nowa_cena">  {((1 - this.state.discount[p.discount+"_val"]/100.0) * p.price/100).toFixed(0)} PLN</span></td> : <td>{(p.price/100).toFixed(0)}PLN</td>  } 
             <a onClick={this.addToBasket(p.id)}>Dodaj do koszyka</a>
             </tr>
+            : ""
         );
             return (
             <div>
@@ -135,4 +138,4 @@ class Shop extends React.Component {
     }
 }
 
-export default Shop;
+export default Promocje;
