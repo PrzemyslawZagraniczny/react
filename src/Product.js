@@ -4,15 +4,8 @@ import React from 'react';
 
 class Product extends React.Component {
     state = {
-        product : [{
-            id: "p.id",
-                category: "p.category",
-                color: "p.color",
-                name: "p.name",
-                description: "p.descriiption",
-                price: "p.price",
-                discount: "p.discount"
-        }],
+        product : [],
+        cat : [],
         bShow: true
     }
     constructor() {
@@ -22,14 +15,13 @@ class Product extends React.Component {
   
     render() {
 
-        let tableData = this.tableData = this.state.product.map( p =>
+        let tableData = this.state.product.map( p =>
             <tr>
-
                 <td>{p.id}</td>
                 <td>{p.name}</td>
-                <td>{p.category}</td>
-                <td>{p.price} PLN</td>
-                <td> <a href={"product/" + p.id}>Szczegóły</a></td>
+                <td>{this.state.cat[p.category]}</td>
+                <td>{(p.price/100.0)} PLN</td>
+                <td> <a href={"product/" + p.id}>Usuń</a></td>
 
             </tr>);
 
@@ -52,8 +44,9 @@ class Product extends React.Component {
         </table>
         </div>
         )
-    }
-    async getProductRequest(url) {
+    }    
+    
+    async getRequest(url) {
         let result = null;
         
         result = fetch(url, {
@@ -69,15 +62,18 @@ class Product extends React.Component {
         }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));
         return result; 
     }
+    
+
     componentDidMount() {
         console.log("Product mounted");
+        this.getCats();
         this.getProducts();
         
     }
 
     async getProducts() {
         const url = "http://localhost:9001/products_json";
-        let res = await this.getProductRequest(url);
+        let res = await this.getRequest(url);
         let products = [];
         res.map(p =>
             { 
@@ -95,6 +91,21 @@ class Product extends React.Component {
         });
              
         this.setState({product: products});
+    }
+
+    async getCats() {
+        const url = "http://localhost:9001/cats_json";
+        let res = await this.getRequest(url);
+        let cats = [];
+        res.map(c =>
+            { 
+              cats[c.id] = c.name;
+              console.log(c.name);
+              cats[c.id+"_desc"] = c.description;
+            }
+        );
+             
+        this.setState({cat: cats});
     }
 }
 
