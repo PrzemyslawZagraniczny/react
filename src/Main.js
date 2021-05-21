@@ -2,31 +2,12 @@ import React from 'react';
 
 
 class Main extends React.Component {
-    state = {
-        n : ['Mir', "Ewa"],
-        bShow: true
-    }
    
     render() {
-        
-        const check = () => {return this.state.bShow}
-        // const change = () => {
-        //     console.log("change...");
-        //     // this.state.bShow = !this.state.bShow
-        //     this.setState({bShow: !this.state.bShow})    
-        // };
-        
-        // const zmiana = () => {
-        //     this.setState({n : ["Ewa", 'Mir']})
-    
-        // }     
-        const formN = this.state.n.map( nn => <li> {nn}</li>)
         return (
         <div>
-            <h1> To 
-                <ul>{ check() ? formN : "brak"}</ul>
-            </h1>
-            {/* <button onClick={change}> Zmień</button> */}
+            <h3> Projekt z Front Endu React. Serwer skonfigurowany na port <ii>3001</ii></h3>
+            <h4> Scala puszcza z http://localhost:300[0|1]  <br></br>GET/POST/DELETE/OPTIONS <ii>3001</ii></h4>
         </div>
         )
     }

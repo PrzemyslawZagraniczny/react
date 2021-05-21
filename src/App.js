@@ -32,7 +32,7 @@ function App() {
         <li><Link to="/stocks">Stan magazynu</Link>  </li>
       </ul>
       
-      <Route path="/main"> <Main/></Route>
+      <Route path="/"> <Main/></Route>
       <Route path="/products"><Product/></Route>
       <Route path="/searchproducts"><Shop/></Route>
       <Route path="/promocje"><Promocje/></Route>
