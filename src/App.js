@@ -11,6 +11,7 @@ import Discount from './Discount'
 import DiscountForm from './DiscountForm'
 import CategoryForm from './CategoryForm'
 import ProductForm from './ProductForm'
+import {ShopContextProvider} from "./ShopContext";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <header className="App-header">
       </header>
       <div className="menu">
+      <ShopContextProvider>
       <BrowserRouter>
       <ul>
         <li><Link to="/">Strona główna</Link>  </li>
@@ -43,6 +45,7 @@ function App() {
       <Route path="/adddiscount"><DiscountForm/></Route>
       <Route path="/stocks"><Stock/></Route>
       </BrowserRouter>
+      </ShopContextProvider>
       </div>
       <div className="root"></div>       
     </div>

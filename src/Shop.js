@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import ShopContext from "./ShopContext";
+
 
 
 class Shop extends React.Component {
+
+    
     state = {
         product : [],
         cat : [],
@@ -122,16 +126,28 @@ class Shop extends React.Component {
     }
     
     async getDiscounts() {
-        const url = "http://localhost:9001/discounts_json";
-        let res = await this.getRequest(url);
+        // const url = "http://localhost:9001/discounts_json";
+        // let res = await this.getRequest(url);
+        // let discs = [];
+        // res.map ( d => {
+        //     discs[d.id] = d.name;
+        //     console.log(d.name);
+        //     discs[d.id+"_val"] = d.value;
+        // });
+                     
+        // this.setState({discount: discs});
         let discs = [];
-        res.map ( d => {
+        let disc = [];
+        <ShopContext.Consumer>
+            disc = this.getDiscounts();
+        </ShopContext.Consumer>
+
+        disc.map ( d => {
             discs[d.id] = d.name;
             console.log(d.name);
             discs[d.id+"_val"] = d.value;
         });
-                     
-        this.setState({discount: discs});
+        this.setState({discount: disc});
     }
 }
 
