@@ -25,7 +25,7 @@ class Shop extends React.Component {
         const rows = this.state.product.map( p =>
             <tr>
             <td>{p.id}</td>
-            <td>{p.name}}</td>
+            <td>{p.name}</td>
             <td>{this.state.cat[p.category]}</td>
             <td style={{"color": this.state.color[p.color+"_val"]}}>{this.state.color[p.color]}</td>
             {/* ignoruj groszówki */}

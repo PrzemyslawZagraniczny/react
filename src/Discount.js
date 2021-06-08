@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-class Discsount extends React.Component {
+class Discount extends React.Component {
     state = {
-        discsount : [],
+        discount : [],
     }
     constructor() {
         super();
@@ -12,7 +12,7 @@ class Discsount extends React.Component {
   
     render() {
 
-        let tableData = this.tableData = this.state.discsount.map( d =>
+        let tableData = this.tableData = this.state.discount.map( d =>
             <tr>
                 <td>{d.id}</td>
                 <td>{d.name}</td>
@@ -54,7 +54,7 @@ class Discsount extends React.Component {
         return result; 
     }
     
-        async getDiscsounts() {
+    async getDiscsounts() {
         const url = "http://localhost:9001/discounts_json";
         let res = await this.getRequest(url);
         let discsounts = [];
@@ -67,8 +67,8 @@ class Discsount extends React.Component {
             )
         );
                      
-        this.setState({discsount: discsounts});
+        this.setState({discount: discsounts});
     }
 }
 
-export default Discsount;
+export default Discount;
