@@ -17,9 +17,9 @@ export function ShopContextProvider({ children }) {
 
   useEffect(() => {
     getDiscounts()
-      .then((products) => {
-        console.log(products)
-        setDiscounts(products)
+      .then((discount) => {
+        console.log(discount)
+        setDiscounts(discount)
       })
   }, []);
 

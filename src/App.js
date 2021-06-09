@@ -8,6 +8,7 @@ import Shop from './Shop'
 import Promocje from './Promocje'
 import Stock from './Stock'
 import Discount from './Discount'
+import Koszyk from './Koszyk'
 import DiscountForm from './DiscountForm'
 import CategoryForm from './CategoryForm'
 import ProductForm from './ProductForm'
@@ -32,6 +33,7 @@ function App() {
         <li><Link to="/discounts">Bonifikaty</Link>  </li>
         <li><Link to="/adddiscount">Nowa Bonifikata</Link>  </li>
         <li><Link to="/stocks">Stan magazynu</Link>  </li>
+        <li><Link to="/basket">Koszyk</Link>  </li>
       </ul>
       
       <Route path="/"> <Main/></Route>
@@ -44,6 +46,7 @@ function App() {
       <Route path="/discounts"><Discount/></Route>
       <Route path="/adddiscount"><DiscountForm/></Route>
       <Route path="/stocks"><Stock/></Route>
+      <Route path="/basket"><Koszyk/></Route>
       </BrowserRouter>
       </ShopContextProvider>
       </div>
