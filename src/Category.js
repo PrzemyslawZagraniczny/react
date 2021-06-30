@@ -61,7 +61,7 @@ class Category extends React.Component {
     }
 
     async getCats() {
-        const url = "http://localhost:9001/cats_json";
+        const url = "http://localhost:9000/cats_json";
         let res = await this.getRequest(url);
         let cats = [];
         res.map(c =>

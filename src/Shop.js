@@ -76,7 +76,7 @@ class Shop extends React.Component {
     }
 
     async getProducts() {
-        const url = "http://localhost:9001/products_json";
+        const url = "http://localhost:9000/products_json";
         let res = await this.getRequest(url);
         let products = [];
         res.map(p =>
@@ -98,7 +98,7 @@ class Shop extends React.Component {
     }
 
     async getCats() {
-        const url = "http://localhost:9001/cats_json";
+        const url = "http://0/cats_json";
         let res = await this.getRequest(url);
         let cats = [];
         res.map(c =>
@@ -112,7 +112,7 @@ class Shop extends React.Component {
         this.setState({cat: cats});
     }
     async getColors() {
-        const url = "http://localhost:9001/colors_json";
+        const url = "http://localhost:9000/colors_json";
         let res = await this.getRequest(url);
         let colors = [];
         res.map ( c => {
@@ -125,7 +125,7 @@ class Shop extends React.Component {
     }
     
     async getDiscounts() {
-        const url = "http://localhost:9001/discounts_json";
+        const url = "http://localhost:9000/discounts_json";
         let res = await this.getRequest(url);
         let discs = [];
         res.map ( d => {

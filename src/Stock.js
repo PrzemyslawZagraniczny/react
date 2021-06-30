@@ -65,7 +65,7 @@ class Stock extends React.Component {
     }
 
     async getStocks() {
-        const url = "http://localhost:9001/stocks_json";
+        const url = "http://localhost:9000/stocks_json";
         let res = await this.getRequest(url);
         let stocks = [];
         res.map(s =>
@@ -82,7 +82,7 @@ class Stock extends React.Component {
     }
 
     async getProducts() {
-        const url = "http://localhost:9001/products_json";
+        const url = "http://localhost:9000/products_json";
         let res = await this.getRequest(url);
         let products = [];
         res.map(p =>
@@ -95,7 +95,7 @@ class Stock extends React.Component {
     }
 
     async getSizes() {
-        const url = "http://localhost:9001/sizes_json";
+        const url = "http://localhost:9000/sizes_json";
         let res = await this.getRequest(url);
         let siz = [];
         res.map ( s => {

@@ -26,7 +26,7 @@ class CategoryForm extends React.Component {
         )
     }    
     async postRequest(event) {
-        const url = "http://localhost:9001/addcathandle"
+        const url = "http://localhost:9000/addcathandle"
         let result = null;
         let data = new FormData(event.target);
         result = fetch(url, {

@@ -72,7 +72,7 @@ class Product extends React.Component {
     }
 
     async getProducts() {
-        const url = "http://localhost:9001/products_json";
+        const url = "http://localhost:9000/products_json";
         let res = await this.getRequest(url);
         let products = [];
         res.map(p =>
@@ -94,7 +94,7 @@ class Product extends React.Component {
     }
 
     async getCats() {
-        const url = "http://localhost:9001/cats_json";
+        const url = "http://localhost:9000/cats_json";
         let res = await this.getRequest(url);
         let cats = [];
         res.map(c =>

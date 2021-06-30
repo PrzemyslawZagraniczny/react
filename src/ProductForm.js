@@ -76,7 +76,7 @@ class ProductForm extends React.Component {
         )
     }    
     async postRequest(event) {
-        const url = "http://localhost:9001/addproducthandle"
+        const url = "http://localhost:9000/addproducthandle"
         let result = null;
         let data = new FormData(event.target);
         result = fetch(url, {
@@ -110,7 +110,7 @@ class ProductForm extends React.Component {
 
 
     async getCats() {
-        const url = "http://localhost:9001/cats_json";
+        const url = "http://localhost:9000/cats_json";
         let res = await this.getRequest(url);
         let cats = [];
         res.map(c =>
@@ -126,7 +126,7 @@ class ProductForm extends React.Component {
     }
 
     async getColors() {
-        const url = "http://localhost:9001/colors_json";
+        const url = "http://localhost:9000/colors_json";
         let res = await this.getRequest(url);
         let colors = [];
         res.map(c =>
@@ -142,7 +142,7 @@ class ProductForm extends React.Component {
     }
 
     async getDiscsounts() {
-        const url = "http://localhost:9001/discounts_json";
+        const url = "http://localhost:9000/discounts_json";
         let res = await this.getRequest(url);
         let discounts = [];
         res.map(d =>

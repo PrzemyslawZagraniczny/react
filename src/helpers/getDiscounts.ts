@@ -1,7 +1,7 @@
 import { IDiscount } from "../IDiscount";
 
 export const getDiscounts = async (): Promise<IDiscount[]> => {
-  const response = await fetch("http://localhost:9001/discounts_json", {
+  const response = await fetch("http://localhost:9000/discounts_json", {
     mode: 'cors',
     method: 'GET' ,
     headers: {
