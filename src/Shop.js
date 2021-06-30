@@ -96,7 +96,7 @@ class Shop extends React.Component {
     }
 
     async getCats() {
-        const url = "http://0ocalhost:9001/cats_json";
+        const url = "http://localhost:9001/cats_json";
         let res = await this.getRequest(url);
         let cats = {};
         res.map(c =>
