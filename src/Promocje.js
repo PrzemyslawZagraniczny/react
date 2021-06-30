@@ -25,7 +25,7 @@ class Promocje extends React.Component {
         const showDiscounts = () => {return this.state.bShow}
         const rows = this.state.product.map( p =>
             (showDiscounts() &&  this.state.discount[p.discount+"_val"] > 0) ? 
-            <tr>
+            <tr key={p.id}>
             <td>{p.id}</td>
             <td>{p.name}}</td>
             <td>{this.state.cat[p.category]}</td>

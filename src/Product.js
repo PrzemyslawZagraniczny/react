@@ -14,7 +14,7 @@ class Product extends React.Component {
     render() {
 
         let tableData = this.state.product.map( p =>
-            <tr>
+            <tr key={p.id}>
                 <td>{p.id}</td>
                 <td>{p.name}</td>
                 <td>{this.state.cat[p.category]}</td>
@@ -27,7 +27,7 @@ class Product extends React.Component {
         return (
         <div>
             <h3 className="info">Lista produktów</h3>
-            <table class="produkty">
+            <table className="produkty">
             <thead>
                 <tr>
                     <th>id</th>
@@ -66,6 +66,7 @@ class Product extends React.Component {
         console.log("Product mounted");
         this.getCats();
         this.getProducts();
+        this.getBasket();
         
     }
 
@@ -89,7 +90,20 @@ class Product extends React.Component {
              
         this.setState({product: products});
     }
-
+    async getBasket() {
+        const url = "http://localhost:9000/baskets_json";
+        let res = await this.getRequest(url);
+        let b = [];
+        res.map(p =>
+            { 
+              b.push({
+                id: p.id,
+                product: p.product,
+                pieces: p.pieces,
+            });
+            console.log("BASKET: " + p.id);
+        });
+    }
     async getCats() {
         const url = "http://localhost:9000/cats_json";
         let res = await this.getRequest(url);

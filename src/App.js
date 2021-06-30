@@ -13,7 +13,7 @@ import DiscountForm from './DiscountForm'
 import CategoryForm from './CategoryForm'
 import ProductForm from './ProductForm'
 import {ShopContextProvider} from "./ShopContext";
-
+import {ProductContextProvider} from "./ProductContext";
 import LogIn from './LogIn'
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
       </header>
       <div className="menu">
       <ShopContextProvider>
+      <ProductContextProvider>
       <BrowserRouter>
         <ul>
           <li><Link to="/">Strona główna</Link>  </li>
@@ -52,7 +53,9 @@ function App() {
         <Route path="/basket"><Koszyk/></Route>
         <Route path="/login"><LogIn/></Route>
       </BrowserRouter>
+      </ProductContextProvider>
       </ShopContextProvider>
+
       </div>
       <div className="root"></div>       
     </div>

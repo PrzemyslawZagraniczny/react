@@ -12,5 +12,5 @@ Hooks (w gałęzi hooks)
 
 OAuth2 dla Google+
 
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=PrzemyslawZagraniczny_react&metric=alert_status)](https://sonarcloud.io/dashboard?id=PrzemyslawZagraniczny_react)[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=PrzemyslawZagraniczny_react&metric=bugs)](https://sonarcloud.io/dashboard?id=PrzemyslawZagraniczny_react)[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=PrzemyslawZagraniczny_react&metric=code_smells)](https://sonarcloud.io/dashboard?id=PrzemyslawZagraniczny_react)
+<!-- [Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=PrzemyslawZagraniczny_react&metric=alert_status)](https://sonarcloud.io/dashboard?id=PrzemyslawZagraniczny_react) -->
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=PrzemyslawZagraniczny_react&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=PrzemyslawZagraniczny_react)[![![Bugs](https://sonarcloud.io/api/project_badges/measure?project=PrzemyslawZagraniczny_react&metric=bugs)](https://sonarcloud.io/dashboard?id=PrzemyslawZagraniczny_react)[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=PrzemyslawZagraniczny_react&metric=code_smells)](https://sonarcloud.io/dashboard?id=PrzemyslawZagraniczny_react)

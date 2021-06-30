@@ -16,8 +16,19 @@ class Shop extends React.Component {
         this.getColors();
         this.getDiscounts();
     }
-    addToBasket (id) {
+    async addToBasket (id) {
         console.log("DODAJE DO KOSZA! :" + id);
+        const url = "http://localhost:9000/basket_add/"+id;
+        fetch(url, {
+            mode: 'cors',
+            method: 'GET' ,
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json',
+            },
+            
+        
+        })
         
     }
 
@@ -25,7 +36,7 @@ class Shop extends React.Component {
     render() {
         // const showDiscounts = () => {return this.state.bShow}
         const rows = this.state.product.map( p =>
-            <tr>
+            <tr key={p.id}>
             <td>{p.id}</td>
             <td>{p.name}</td>
             <td>{this.state.cat[p.category]}</td>
@@ -33,8 +44,7 @@ class Shop extends React.Component {
             <td style={{"color": this.state.color[p.color+"_val"]}}>{this.state.color[p.color]}</td>
             {/* ignoruj groszówki */}
             {this.state.discount[p.discount+"_val"] > 0 ? <td><p><b>PROMOCJA!</b> {this.state.discount[p.discount]} </p><span class="stara_cena">{(p.price/100).toFixed(0)}PLN</span><span class="nowa_cena">  {((1 - this.state.discount[p.discount+"_val"]/100.0) * p.price/100).toFixed(0)} PLN</span></td> : <td>{(p.price/100).toFixed(0)}PLN</td>  } 
-            {/* <button onClick={this.addToBasket(p.id)}></button> */}
-            <td> <a href={"/basket_add/" + p.id}>Dodaj do koszyka</a></td>
+            <a onClick={() => this.addToBasket(p.id)}>Dodaj do koszyka</a>
             </tr>
         );
             return (
@@ -96,13 +106,12 @@ class Shop extends React.Component {
     }
 
     async getCats() {
-        const url = "http://localhost:9001/cats_json";
+        const url = "http://localhost:9000/cats_json";
         let res = await this.getRequest(url);
         let cats = {};
         res.map(c =>
             { 
               cats[c.id] = c.name;
-              console.log(c.name);
               cats[c.id+"_desc"] = c.description;
             }
         );
