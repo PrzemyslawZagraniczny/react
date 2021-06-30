@@ -33,13 +33,11 @@ class CategoryForm extends React.Component {
             mode: 'cors',
             method: 'POST' ,
             body: data
-        }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));
+        }).then( resp => {return resp.json()}).then ( dat => {return dat;});//.catch(e => console.error(e.message));
         return result; 
     }
     
     componentDidMount() {
-        
-        //this.getCats();
     }
 
 }

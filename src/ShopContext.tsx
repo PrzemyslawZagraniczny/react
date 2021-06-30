@@ -28,6 +28,6 @@ export function ShopContextProvider({ children }) {
       {children}
     </ShopContext.Provider>
   );
-} ;
+} 
 
 export default ShopContext;

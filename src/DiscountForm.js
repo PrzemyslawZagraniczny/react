@@ -26,14 +26,14 @@ class DiscountForm extends React.Component {
         )
     }    
     async postRequest(event) {
-        const url = "http://localhost:9001/adddiscounthandle"
+        const url = "http://localhost:9000/adddiscounthandle"
         let result = null;
         let data = new FormData(event.target);
         result = fetch(url, {
             mode: 'cors',
             method: 'POST' ,
             body: data
-        }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));
+        }).then( resp => {return resp.json()}).then ( dat => {return dat;});//.catch(e => console.error(e.message));
         return result; 
     }
 }

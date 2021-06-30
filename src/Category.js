@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 class Category extends React.Component {
@@ -57,7 +56,6 @@ class Category extends React.Component {
 
     componentDidMount() {
         console.log("Cat mounted");
-        //this.getCats();
     }
 
     async getCats() {

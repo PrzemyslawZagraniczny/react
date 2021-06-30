@@ -1,6 +1,4 @@
 import React from 'react';
-import ShopContext from "./ShopContext";
-
 
 
 class Shop extends React.Component {
@@ -24,7 +22,7 @@ class Shop extends React.Component {
 
     
     render() {
-        const showDiscounts = () => {return this.state.bShow}
+        // const showDiscounts = () => {return this.state.bShow}
         const rows = this.state.product.map( p =>
             <tr>
             <td>{p.id}</td>
@@ -90,8 +88,6 @@ class Shop extends React.Component {
                 price: p.price,
                 discount: p.discount
             });
-            // console.log("dodaje jednego: " + products[products.length-1].name);
-            console.log("dodaje");
         });
              
         this.setState({product: products});
@@ -114,7 +110,7 @@ class Shop extends React.Component {
     async getColors() {
         const url = "http://localhost:9000/colors_json";
         let res = await this.getRequest(url);
-        let colors = [];
+        let colors = {};
         res.map ( c => {
             colors[c.id] = c.name;
             console.log(c.name);
@@ -127,7 +123,7 @@ class Shop extends React.Component {
     async getDiscounts() {
         const url = "http://localhost:9000/discounts_json";
         let res = await this.getRequest(url);
-        let discs = [];
+        let discs = {};
         res.map ( d => {
             discs[d.id] = d.name;
             console.log(d.name);

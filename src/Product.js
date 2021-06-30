@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 
 
 class Product extends React.Component {
@@ -10,7 +9,6 @@ class Product extends React.Component {
     }
     constructor() {
         super();
-        //this.getProducts();
     }
   
     render() {
@@ -86,7 +84,6 @@ class Product extends React.Component {
                 price: p.price,
                 discount: p.discount
             });
-            // console.log("dodaje jednego: " + products[products.length-1].name);
             console.log("dodaje");
         });
              
@@ -96,7 +93,7 @@ class Product extends React.Component {
     async getCats() {
         const url = "http://localhost:9000/cats_json";
         let res = await this.getRequest(url);
-        let cats = [];
+        let cats = {};
         res.map(c =>
             { 
               cats[c.id] = c.name;

@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+// Component obsługi formularza 
 class ProductForm extends React.Component {
     state = {
         cat : [],
@@ -83,13 +84,10 @@ class ProductForm extends React.Component {
             mode: 'cors',
             method: 'POST' ,
             body: data
-        }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));
+        }).then( resp => {return resp.json()}).then ( dat => {return dat;});
         return result; 
     }
     
-    componentDidMount() {
-        
-    }
 
     async getRequest(url) {
         let result = null;
@@ -104,7 +102,7 @@ class ProductForm extends React.Component {
             },
             
         
-        }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));
+        }).then( resp => {return resp.json()}).then ( data => {return data;});
         return result; 
     }
 

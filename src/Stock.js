@@ -84,7 +84,7 @@ class Stock extends React.Component {
     async getProducts() {
         const url = "http://localhost:9000/products_json";
         let res = await this.getRequest(url);
-        let products = [];
+        let products = {};
         res.map(p =>
         { 
             products[p.id] = p.name;
