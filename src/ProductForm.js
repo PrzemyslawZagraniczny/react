@@ -98,7 +98,6 @@ class ProductForm extends React.Component {
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
             },
             
         

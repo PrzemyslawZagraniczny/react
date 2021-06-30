@@ -45,7 +45,6 @@ class Discount extends React.Component {
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
             },
             
         
@@ -54,7 +53,7 @@ class Discount extends React.Component {
     }
     
     async getDiscsounts() {
-        const url = "http://0ocalhost:9001/discounts_json";
+        const url = "http://localhost:9001/discounts_json";
         let res = await this.getRequest(url);
         let discsounts = [];
         res.map(d =>

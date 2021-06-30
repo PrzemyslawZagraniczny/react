@@ -37,9 +37,6 @@ class CategoryForm extends React.Component {
         return result; 
     }
     
-    componentDidMount() {
-    }
-
-}
+  }
 
 export default CategoryForm;

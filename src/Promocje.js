@@ -32,7 +32,7 @@ class Promocje extends React.Component {
             <td style={{"color": this.state.color[p.color+"_val"]}}>{this.state.color[p.color]}</td>
             {/* ignoruj groszówki */}
             {this.state.discount[p.discount+"_val"] > 0 ? <td><p><b>PROMOCJA!</b> {this.state.discount[p.discount]} </p><span class="stara_cena">{(p.price/100).toFixed(0)}PLN</span><span class="nowa_cena">  {((1 - this.state.discount[p.discount+"_val"]/100.0) * p.price/100).toFixed(0)} PLN</span></td> : <td>{(p.price/100).toFixed(0)}PLN</td>  } 
-            <a onClick={this.addToBasket(p.id)}>Dodaj do koszyka</a>
+            <td> <a href={"/basket_add/" + p.id}>Dodaj do koszyka</a></td>
             </tr>
             : ""
         );
@@ -67,8 +67,7 @@ class Promocje extends React.Component {
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
+             },
             
         
         }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));
@@ -100,7 +99,7 @@ class Promocje extends React.Component {
     async getCats() {
         const url = "http://localhost:9000/cats_json";
         let res = await this.getRequest(url);
-        let cats = [];
+        let cats = {};
         res.map(c =>
             { 
               cats[c.id] = c.name;
@@ -114,7 +113,7 @@ class Promocje extends React.Component {
     async getColors() {
         const url = "http://localhost:9000/colors_json";
         let res = await this.getRequest(url);
-        let colors = [];
+        let colors = {};
         res.map ( c => {
             colors[c.id] = c.name;
             console.log(c.name);
@@ -127,7 +126,7 @@ class Promocje extends React.Component {
     async getDiscounts() {
         const url = "http://localhost:9000/discounts_json";
         let res = await this.getRequest(url);
-        let discs = [];
+        let discs = {};
         res.map ( d => {
             discs[d.id] = d.name;
             console.log(d.name);

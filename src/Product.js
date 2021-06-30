@@ -20,7 +20,8 @@ class Product extends React.Component {
                 <td>{this.state.cat[p.category]}</td>
                 <td>{(p.price/100.0)} PLN</td>
                 <td> <a href={"product/" + p.id}>Usuń</a></td>
-
+                
+                
             </tr>);
 
         return (
@@ -53,8 +54,7 @@ class Product extends React.Component {
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
+             },
             
         
         }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));

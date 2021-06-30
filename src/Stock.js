@@ -56,8 +56,7 @@ class Stock extends React.Component {
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
+             },
             
         
         }).then( resp => {return resp.json()}).then ( data => {return data;});//.catch(e => console.error(e.message));

@@ -1,6 +1,4 @@
-import React, {useContext} from 'react';
-// import ShopContext from "./ShopContext";
-
+import React from 'react';
 
 export const LogIn = () => {
 

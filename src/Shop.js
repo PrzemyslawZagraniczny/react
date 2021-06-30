@@ -18,6 +18,7 @@ class Shop extends React.Component {
     }
     addToBasket (id) {
         console.log("DODAJE DO KOSZA! :" + id);
+        
     }
 
     
@@ -28,10 +29,12 @@ class Shop extends React.Component {
             <td>{p.id}</td>
             <td>{p.name}</td>
             <td>{this.state.cat[p.category]}</td>
+ 
             <td style={{"color": this.state.color[p.color+"_val"]}}>{this.state.color[p.color]}</td>
             {/* ignoruj groszówki */}
             {this.state.discount[p.discount+"_val"] > 0 ? <td><p><b>PROMOCJA!</b> {this.state.discount[p.discount]} </p><span class="stara_cena">{(p.price/100).toFixed(0)}PLN</span><span class="nowa_cena">  {((1 - this.state.discount[p.discount+"_val"]/100.0) * p.price/100).toFixed(0)} PLN</span></td> : <td>{(p.price/100).toFixed(0)}PLN</td>  } 
-            <a onClick={this.addToBasket(p.id)}>Dodaj do koszyka</a>
+            {/* <button onClick={this.addToBasket(p.id)}></button> */}
+            <td> <a href={"/basket_add/" + p.id}>Dodaj do koszyka</a></td>
             </tr>
         );
             return (
@@ -65,7 +68,6 @@ class Shop extends React.Component {
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
             },
             
         
@@ -94,9 +96,9 @@ class Shop extends React.Component {
     }
 
     async getCats() {
-        const url = "http://0/cats_json";
+        const url = "http://0ocalhost:9001/cats_json";
         let res = await this.getRequest(url);
-        let cats = [];
+        let cats = {};
         res.map(c =>
             { 
               cats[c.id] = c.name;
