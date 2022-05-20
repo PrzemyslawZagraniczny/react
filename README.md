@@ -8,7 +8,7 @@ Hooks (w gałęzi hooks)
 
 -Discount, Color 
 
-# Zadanie 7
+### Zadanie 7
 
 OAuth2 dla Google+
 
