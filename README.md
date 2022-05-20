@@ -2,7 +2,7 @@
 
 10 komponentów React.js
 
-# Zadanie 6
+## Zadanie 6
 
 Hooks (w gałęzi hooks)
 
